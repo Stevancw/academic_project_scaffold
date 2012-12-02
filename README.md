@@ -15,5 +15,5 @@ The **research** directory contains all of the research material listed in the .
 
 Submissions.md contains a log of previous submissions
 
-**versions** contains any previous iterations and files associated with them e.g. .tex and .bst files
+**versions** contains any previous iterations and files associated with them e.g. .tex and .bst files. Use the article_template file to enter meta-data and reference the relivant files and run both pdfLaTeX then BibTeX then pdfLaTeX twice on it.
 

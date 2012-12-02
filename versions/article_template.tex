@@ -7,25 +7,119 @@
 %   Copyright (c) 2012 Stevan C Wing
 %
 
+% Configure LaTeX to produce an article using the memoir class
+% Configure this to your needs
+\documentclass[oneside,article]{memoir}
+
+%	/////////////////////////////////////////////////
+%	Generic Configuration for memoir-based documents
+%	/////////////////////////////////////////////////
+
+% Packages and symbols
+\usepackage{layouts}[2001/04/29]
 % Use utf-8 encoding for foreign characters
 \usepackage[utf8]{inputenc}
 
-\input{mmd-article-header}
-% Set the title
+
+% In case we need a glossary, or index
+\usepackage{glossaries}
+\glstoctrue
+\makeglossaries
+\makeindex
+
+% Basic page layout configuration
+\def\mychapterstyle{default}
+\def\mypagestyle{headings}
+
+% Use 8.5 x 11 inch page layout
+\input{mmd-memoir-layout-8.5x11}
+
+% Use default packages for memoir setup
+\input{mmd-memoir-packages}
+
+% Configure default metadata to avoid errors
+\input{mmd-default-metadata}
+
+% Set the title and author
 \def\mytitle{**This is the title**}
 \def\myauthor{Stevan C Wing}
+
 % Set the path to the bibliography
-\def\bibliocommand{\bibliography{**bib.bib**}}
+\def\bibliocommand{\bibliography{../bib.bib}}
+
 % Set the bibliography sytle
 \def\bibliostyle{nature}
+
+% LaTeX style 
 \def\latexmode{memoir}
 
-\input{mmd-article-begin-doc}
+%	////////////////////////////////////////////////////////////
+%	For setup that must follow metadata included in the document
+%	////////////////////////////////////////////////////////////
+
+\usepackage[
+	plainpages=false,
+	pdfpagelabels,
+	pdftitle={\mytitle},
+	pagebackref,
+	pdfauthor={\myauthor},
+	pdfkeywords={\keywords}
+	]{hyperref}
+\usepackage{memhfixc}
+
+
+\input{mmd-title}
+
+
+\begin{document}
+
+\title{\mytitle}
+\author{\myauthor}
+
+\ifx\mydate\undefined
+\else
+	\date{\mydate}
+\fi
+
+\mainmatter
+\maketitle
+
+% Copyright
+\setlength{\parindent}{0pt}
+
+\ifx\mycopyright\undefined
+\else
+	\textcopyright{} \mycopyright
+\fi
+
+\setlength{\parindent}{1em}
 
 % Set the name of the .tex file
-\input{proposal}
+\input{project}
 
-\input{mmd-memoir-footer}
+%	//////////////////////////////////
+%	MultiMarkdown default footer file
+%	/////////////////////////////////
+
+% Back Matter
+\if@mainmatter
+	we're in main
+	\backmatter
+\fi
+
+% Bibliography
+
+\ifx\bibliocommand\undefined
+\else
+	\bibliographystyle{\bibliostyle}
+	\bibliocommand
+\fi
+
+% Glossary
+\printglossaries
+
+% Index
+\printindex
 
 \end{document}
 
