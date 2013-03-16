@@ -1,19 +1,4 @@
-This is a blank project
-====================
+Initial PhD proposal.
+==================
 
-The **assests** directory contains multimedia files that directly contribute to the project
-
-A **.bib** file contains the references
-
-**Draft** contain the working copy
-
-The **lib** directory contains files associated with the project e.g. mindmaps, outlines and journal submission particulars.
-
-README.md is this document
-
-The **research** directory contains all of the research material listed in the .bib file
-
-Submissions.md contains a log of previous submissions
-
-**versions** contains any previous iterations and files associated with them e.g. .tex and .bst files. Use the article_template file to enter meta-data and reference the relivant files and run both pdfLaTeX then BibTeX then pdfLaTeX twice on it.
-
+This a proposal of my forthcoming research. It is written as if it is to be submitted as a grant proposal.
