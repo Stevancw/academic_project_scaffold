@@ -1,0 +1,1 @@
+In the lib folder add your data and assets that are associated with your project.
