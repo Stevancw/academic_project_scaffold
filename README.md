@@ -1,4 +1,5 @@
-Initial PhD proposal.
-==================
+Academic Project Framework
+============================
 
-This a proposal of my forthcoming research. It is written as if it is to be submitted as a grant proposal.
+This is a suggested system to provide structure for academic projects.
+
